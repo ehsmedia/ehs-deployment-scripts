@@ -61,4 +61,4 @@ task("ehs:validate", function() {
     writeln("EHS Set up for: " . get("ehs_type"));
 });
 
-fail("deploy", "deploy:unlock");
+after("deploy:failed", "deploy:unlock");
