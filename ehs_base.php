@@ -42,6 +42,7 @@ function define_project_type(string $type, ?string $version = null) {
     }
 
     setup($version);
+    after("deploy:failed", "deploy:unlock");
 }
 
 
@@ -60,5 +61,3 @@ desc("Validate if the deployment is set up for the correct type.");
 task("ehs:validate", function() {
     writeln("EHS Set up for: " . get("ehs_type"));
 });
-
-after("deploy:failed", "deploy:unlock");
