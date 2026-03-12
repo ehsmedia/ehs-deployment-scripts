@@ -60,3 +60,5 @@ desc("Validate if the deployment is set up for the correct type.");
 task("ehs:validate", function() {
     writeln("EHS Set up for: " . get("ehs_type"));
 });
+
+fail("deploy", "deploy:unlock");
