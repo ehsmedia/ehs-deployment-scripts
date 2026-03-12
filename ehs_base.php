@@ -17,6 +17,7 @@ function setup_host(string $env, array $config) {
         ->setLabels(['stage' => $env])
         ->set('keep_releases', $config["keep_releases"])
         ->set('shared_path', '~/public_html/' . ($config['shared_deploy'] ?? $config["deploy_folder"] ) . "/shared")
+        ->set("http_user", "www-data")
         ;
 }
 
