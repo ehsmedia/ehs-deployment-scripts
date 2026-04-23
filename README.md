@@ -6,7 +6,7 @@ in order to simplify the deployment process.
 ## How to Install
 
 Use Submodules!
-`git submodule add git@github.com/ehsmedia/ehs-deployment-scripts.git .deployment`
+`git submodule add git@github.com:ehsmedia/ehs-deployment-scripts.git .deployment`
 
 This will create a new file .submodules that needs to be commited to the repository.
 
