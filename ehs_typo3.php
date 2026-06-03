@@ -16,3 +16,10 @@ set('repository', 'file://.');
 set('update_code_strategy', 'local_archive');
 
 task("typo3:install:fixfolderstructure")->hidden()->disable();
+
+set('vite_folder', 'public/_assets/vite');
+set('vite_remote', '/public/_assets/');
+
+add('clear_files', ["package.json", "package-lock.json", "pnpm-lock.yaml", "pnpm-worspace.yaml", "unlighthouse.config.mjs", "vite.config.mjs"]);
+
+after("deploy:cleanup", "ehs:clear_files");

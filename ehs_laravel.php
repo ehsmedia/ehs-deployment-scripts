@@ -15,6 +15,9 @@ function setup(?string $version) {
 set('repository', 'file://.');
 set('update_code_strategy', 'local_archive');
 
+set('vite_folder', 'public/build');
+set('vite_remote', 'public/');
+
 add('shared_files', []);
 add('shared_dirs', []);
 add('writable_dirs', []);

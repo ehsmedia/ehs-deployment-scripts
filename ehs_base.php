@@ -63,3 +63,10 @@ desc("Validate if the deployment is set up for the correct type.");
 task("ehs:validate", function() {
     writeln("EHS Set up for: " . get("ehs_type"));
 });
+
+desc("Compile assets using vite");
+task("vite:build", function() {
+    runLocally('pnpm install', env: ['CI' => true]);
+    runLocally('pnpm vite build', env: ['CI' => true]);
+    upload('{{vite_folder}}', '{{release_path}}{{vite_remote}}');
+});
